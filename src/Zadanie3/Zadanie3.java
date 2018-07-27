@@ -5,7 +5,9 @@ import java.util.Scanner;
 public class Zadanie3 {
     public static void main(String[] args) {
         Scanner scan = new Scanner(System.in);
-        System.out.println("Guess a number between 1 do 100 and i'll guess it \n" + "Type too much, too small or correct");
+        String jeszczeRaz ="";
+
+        do{System.out.println("Guess a number between 1 do 100 and i'll guess it \n" + "Type too much, too small or correct");
         int min = 0;
         int max = 100;
         int guess = (max-min)/2 + min;
@@ -21,7 +23,7 @@ public class Zadanie3 {
                 min=guess;
             }
             else if(userInput.equalsIgnoreCase("correct")){
-                System.out.println("I won");
+                System.out.println("I won ");
                 end = true;
             }
             else {
@@ -29,5 +31,10 @@ public class Zadanie3 {
             }
              guess = (max-min)/2 + min;
         }
+            System.out.println("Try again? Y/N");
+        jeszczeRaz =scan.next();
+    }while(jeszczeRaz.equalsIgnoreCase("Y"));
+        System.out.println("Good bye \n" + "Thanks for playing");
+        scan.close();
     }
 }
